@@ -1,0 +1,16 @@
+[
+{
+  "modid": "visible-barriers",
+  "name": "Visible Barriers",
+  "description": "Toggle barrier visibility through a keybind.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://github.com/olvend/VisibleBarriers",
+  "updateUrl": "",
+  "authorList": ["Diabet"],
+  "credits": "",
+  "logoFile": "logo.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]

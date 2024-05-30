@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.7",
+  "package": "net.diabet.visiblebarriers.mixins",
+  "refmap": "mixins.visiblebarriers.refmap.json",
+  "compatibilityLevel": "JAVA_8",
+  "client": [
+    "MixinBarrier",
+    "MixinBlockBarrier",
+    "MixinBlockStateMapper"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
