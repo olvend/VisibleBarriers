@@ -1,6 +1,6 @@
 [
 {
-  "modid": "visible-barriers",
+  "modid": "visiblebarriers",
   "name": "Visible Barriers",
   "description": "Toggle barrier visibility through a keybind.",
   "version": "${version}",

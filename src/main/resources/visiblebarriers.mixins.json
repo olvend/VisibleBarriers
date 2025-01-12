@@ -1,8 +1,8 @@
 {
   "required": true,
   "minVersion": "0.7",
-  "package": "net.diabet.visiblebarriers.mixins",
-  "refmap": "mixins.visiblebarriers.refmap.json",
+  "package": "io.github.olvend.visiblebarriers.mixins",
+  "refmap": "visiblebarriers.refmap.json",
   "compatibilityLevel": "JAVA_8",
   "client": [
     "MixinBarrier",
