@@ -1,4 +1,4 @@
-package net.diabet.visiblebarriers.mixins;
+package io.github.olvend.visiblebarriers.mixins;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;

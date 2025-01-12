@@ -1,4 +1,4 @@
-package net.diabet.visiblebarriers;
+package io.github.olvend.visiblebarriers;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;

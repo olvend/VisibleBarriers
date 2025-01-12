@@ -1,6 +1,6 @@
-package net.diabet.visiblebarriers.mixins;
+package io.github.olvend.visiblebarriers.mixins;
 
-import net.diabet.visiblebarriers.VisibleBarriers;
+import io.github.olvend.visiblebarriers.VisibleBarriers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBarrier;
 import net.minecraft.block.material.Material;

@@ -1,6 +1,6 @@
-package net.diabet.visiblebarriers.mixins;
+package io.github.olvend.visiblebarriers.mixins;
 
-import net.diabet.visiblebarriers.VisibleBarriers;
+import io.github.olvend.visiblebarriers.VisibleBarriers;
 import net.minecraft.client.particle.Barrier;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.entity.Entity;

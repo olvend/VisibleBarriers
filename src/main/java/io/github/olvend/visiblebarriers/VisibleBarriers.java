@@ -1,11 +1,8 @@
-package net.diabet.visiblebarriers;
+package io.github.olvend.visiblebarriers;
 
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.client.GuiModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-
-import java.util.Arrays;
 
 @Mod(modid =
         VisibleBarriers.MODID,
@@ -14,9 +11,9 @@ import java.util.Arrays;
         clientSideOnly = true
 )
 public class VisibleBarriers {
-    public static final String MODID = "visible-barriers";
+    public static final String MODID = "visiblebarriers";
     public static final String NAME = "Visible Barrers";
-    public static final String VERSION = "1.0.0";
+    public static final String VERSION = "1.0.1";
 
     public static boolean isVisible = false;
 

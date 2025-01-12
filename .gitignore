@@ -17,6 +17,8 @@ out
 # gradle
 build
 .gradle
+.idea
+.gitignore
 
 # other
 eclipse
