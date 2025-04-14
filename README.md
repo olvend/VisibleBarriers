@@ -1,5 +1,5 @@
 # Visible Barriers
-**Visible Barriers** is a forge mod for minecraft **1.8.9-1.12.2**
+**Visible Barriers** is a forge mod for minecraft **1.8-1.12.2**
 
 When toggled, this mod allows you to see barrier blocks just like any other block. It’s perfect for map makers, server admins, or anyone who wants better visibility of barriers.
 
