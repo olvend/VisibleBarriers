@@ -1,16 +1,11 @@
 [
-{
-  "modid": "visiblebarriers",
-  "name": "Visible Barriers",
-  "description": "Toggle barrier visibility through a keybind.",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
-  "url": "https://github.com/olvend/VisibleBarriers",
-  "updateUrl": "",
-  "authorList": ["Diabet"],
-  "credits": "",
-  "logoFile": "logo.png",
-  "screenshots": [],
-  "dependencies": []
-}
+  {
+    "modid": "${mod_id}",
+    "name": "${mod_name}",
+    "description": "Toggle barrier visibility through a keybind.",
+    "version": "${mod_version}",
+    "url": "https://github.com/olvend/VisibleBarriers",
+    "authorList": ["Diabet"],
+    "logoFile": "logo.png"
+  }
 ]

@@ -1,33 +1,31 @@
-package io.github.olvend.visiblebarriers.mixins;
+package io.github.olvend.visiblebarriers.mixin.mixins;
 
 import io.github.olvend.visiblebarriers.VisibleBarriers;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBarrier;
-import net.minecraft.block.material.Material;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.world.IBlockAccess;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(BlockBarrier.class)
-public class MixinBlockBarrier extends Block{
-    public MixinBlockBarrier(Material materialIn) {
-        super(materialIn);
+public abstract class BlockBarrierMixin_v1_8 extends Block {
+    public BlockBarrierMixin_v1_8() {
+        super(null);
     }
 
+    @Override
     public int getRenderType() {
         return VisibleBarriers.isVisible ? 3 : -1;
     }
 
-    @SideOnly(Side.CLIENT)
+    @Override
     public EnumWorldBlockLayer getBlockLayer() {
         return EnumWorldBlockLayer.TRANSLUCENT;
     }
 
-    @SideOnly(Side.CLIENT)
+    @Override
     public boolean shouldSideBeRendered(IBlockAccess worldIn, BlockPos pos, EnumFacing side) {
         return worldIn.getBlockState(pos).getBlock() != this;
     }

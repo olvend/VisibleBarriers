@@ -1,13 +1,17 @@
 {
   "required": true,
   "minVersion": "0.7",
-  "package": "io.github.olvend.visiblebarriers.mixins",
-  "refmap": "visiblebarriers.refmap.json",
   "compatibilityLevel": "JAVA_8",
+  "package": "io.github.olvend.visiblebarriers.mixin.mixins",
+  "refmap": "visiblebarriers.refmap.json",
+  "plugin": "io.github.olvend.visiblebarriers.mixin.VersionedMixinPlugin",
   "client": [
-    "MixinBarrier",
-    "MixinBlockBarrier",
-    "MixinBlockStateMapper"
+    "BarrierMixin_v1_8",
+    "BarrierMixin_v1_9",
+    "BarrierMixin_v1_12",
+    "BlockBarrierMixin_v1_8",
+    "BlockBarrierMixin_v1_9",
+    "BlockStateMapperMixin"
   ],
   "injectors": {
     "defaultRequire": 1
