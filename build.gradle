@@ -27,24 +27,24 @@ mixin {
     add sourceSets.main, "${project.mod_id}.refmap.json"
 }
 
+configurations {
+    embed
+    compile.extendsFrom(embed)
+}
+
 repositories {
     maven { url 'https://repo.spongepowered.org/maven/' }
 }
 
 dependencies {
-    compile project(':compat_1_9')
-
-    compile('org.spongepowered:mixin:0.7.11-SNAPSHOT') {
-        exclude module: 'launchwrapper'
-        exclude module: 'guava'
-        exclude module: 'gson'
-        exclude module: 'commons-io'
-        exclude module: 'log4j-core'
+    embed project(':compat_1_9')
+    embed('org.spongepowered:mixin:0.7.11-SNAPSHOT') {
+        transitive = false
     }
 }
 
 processResources {
-    def propertyMap = (file('src/main/resources/mcmod.info').text =~ /\$\{([a-zA-Z0-9_]+)}/)
+    def propertyMap = (file('src/main/resources/mcmod.info').text =~ /\$\{([\w.]+)}/)
             .collect { it[1] }
             .unique()
             .collectEntries { [(it): project.hasProperty(it) ? project[it] : it] }
@@ -56,10 +56,8 @@ processResources {
     }
 }
 
-
-
 jar {
-    dependsOn ':compat_1_9:build'
+    dependsOn configurations.embed, ':compat_1_9:build'
 
     manifest.attributes(
             'TweakOrder': 0,
@@ -70,15 +68,11 @@ jar {
             'ForceLoadAsMod': true
     )
 
-    def includedJars = [
-            'compat_1_9.jar',
-            'mixin-0.7.11-SNAPSHOT.jar'
-    ]
-
-    from(configurations.runtimeClasspath.filter { file ->
-        includedJars.any { (it == file.name) }
-    }.collect { zipTree(it) }) {
-        exclude 'META-INF/*', 'dummyThing', 'LICENSE.txt'
-        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from {
+        configurations.embed.collect { zipTree(it) }
+    } {
+        exclude 'META-INF/*', 'LICENSE.txt', 'dummyThing'
     }
+
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
