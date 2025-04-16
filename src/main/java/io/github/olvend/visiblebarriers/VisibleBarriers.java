@@ -2,8 +2,8 @@ package io.github.olvend.visiblebarriers;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -24,19 +24,26 @@ public class VisibleBarriers {
 
     public static boolean isVisible = false;
 
-    private final KeyBinding TOGGLE_KEY = new KeyBinding("key.toggle_visibility", Keyboard.KEY_B, "key.category.visiblebarriers");
+    private final KeyBinding toggleKey = new KeyBinding(
+            "key.toggle_visibility",
+            Keyboard.KEY_B,
+            "key.category.visiblebarriers"
+    );
+
+    private boolean wasPressed = false;
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-        MinecraftForge.EVENT_BUS.register(this);
-        ClientRegistry.registerKeyBinding(this.TOGGLE_KEY);
+        FMLCommonHandler.instance().bus().register(this);
+        ClientRegistry.registerKeyBinding(this.toggleKey);
     }
 
     @SubscribeEvent
-    public void toggleKey(InputEvent event) {
-        if (this.TOGGLE_KEY.isPressed()) {
+    public void onKeyInput(InputEvent event) {
+        if (this.toggleKey.isKeyDown() && !this.wasPressed) {
             VisibleBarriers.isVisible = !VisibleBarriers.isVisible;
             Minecraft.getMinecraft().renderGlobal.loadRenderers();
         }
+        this.wasPressed = this.toggleKey.isKeyDown();
     }
 }
