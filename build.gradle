@@ -21,6 +21,10 @@ minecraft {
     runDir = 'run'
     mappings = 'stable_22'
     makeObfSourceJar = false
+
+    ['mod_id', 'mod_name', 'mod_version', 'accepted_minecraft_versions'].each { property ->
+        replace "@${property.toUpperCase()}@", project.hasProperty(property) ? project[property] : null
+    }
 }
 
 mixin {

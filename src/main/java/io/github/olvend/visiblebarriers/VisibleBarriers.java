@@ -11,16 +11,16 @@ import net.minecraftforge.fml.common.gameevent.InputEvent;
 import org.lwjgl.input.Keyboard;
 
 @Mod(
-        modid = VisibleBarriers.MODID,
-        name = VisibleBarriers.NAME,
-        version = VisibleBarriers.VERSION,
-        clientSideOnly = true,
-        acceptedMinecraftVersions = "[1.8,1.12.2]"
+        modid = VisibleBarriers.MOD_ID,
+        name = VisibleBarriers.MOD_NAME,
+        version = VisibleBarriers.MOD_VERSION,
+        acceptedMinecraftVersions = "@ACCEPTED_MINECRAFT_VERSIONS@",
+        clientSideOnly = true
 )
 public class VisibleBarriers {
-    public static final String MODID = "visiblebarriers";
-    public static final String NAME = "Visible Barriers";
-    public static final String VERSION = "1.1.0";
+    public static final String MOD_ID = "@MOD_ID@";
+    public static final String MOD_NAME = "@MOD_NAME@";
+    public static final String MOD_VERSION = "@MOD_VERSION@";
 
     public static boolean isVisible = false;
 
