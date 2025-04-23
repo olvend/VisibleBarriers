@@ -9,7 +9,7 @@ This mod works in **all** gamemodes.
 
 ![Preview Image](assets/preview_image.png?raw=true)
 ## Resource Packs
-By default, visible barriers appear as red stained glass blocks with a barrier icons on top.
+By default, visible barriers appear as red stained glass blocks with barrier icons on top.
 
 You can customize this look using a resource pack. You can also replace the model if you want more control over how the barriers appear.
 - Put the texture of your choice in assets/minecraft/textures/blocks/`barrier.png`(your image)
