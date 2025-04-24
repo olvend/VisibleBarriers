@@ -67,7 +67,6 @@ jar {
             'TweakOrder': 0,
             'ModSide': 'CLIENT',
             'MixinConfigs': "${project.mod_id}.mixins.json",
-            'FMLCorePluginContainsFMLMod': true,
             'TweakClass': 'org.spongepowered.asm.launch.MixinTweaker',
             'ForceLoadAsMod': true
     )
