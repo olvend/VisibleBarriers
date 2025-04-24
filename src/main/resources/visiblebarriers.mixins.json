@@ -6,11 +6,11 @@
   "refmap": "visiblebarriers.refmap.json",
   "plugin": "io.github.olvend.visiblebarriers.mixin.VersionedMixinPlugin",
   "client": [
-    "BarrierMixin_v1_8",
-    "BarrierMixin_v1_9",
-    "BarrierMixin_v1_12",
-    "BlockBarrierMixin_v1_8",
-    "BlockBarrierMixin_v1_9",
+    "BarrierMixin_v8$",
+    "BarrierMixin_v9_10_11$",
+    "BarrierMixin_v12$",
+    "BlockBarrierMixin_v8$",
+    "BlockBarrierMixin_v9_10_11_12$",
     "BlockStateMapperMixin"
   ],
   "injectors": {

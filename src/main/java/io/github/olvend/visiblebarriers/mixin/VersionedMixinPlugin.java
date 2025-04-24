@@ -5,8 +5,7 @@ import org.spongepowered.asm.lib.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class VersionedMixinPlugin implements IMixinConfigPlugin {
     @Override
@@ -19,20 +18,21 @@ public class VersionedMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        String minecraftVersion = Loader.instance().getMCVersionString().substring(10);
-        if (mixinClassName.endsWith("v1_8")) {
-            return minecraftVersion.startsWith("1.8");
+        if (!mixinClassName.endsWith("$")) {
+            return true;
         }
-        if (mixinClassName.endsWith("v1_9")) {
-            if (mixinClassName.startsWith("io.github.olvend.visiblebarriers.mixin.mixins.BarrierMixin") && minecraftVersion.startsWith("1.12")) {
-                return false;
-            }
-            return !minecraftVersion.startsWith("1.8");
-        }
-        if (mixinClassName.endsWith("v1_12")) {
-            return minecraftVersion.startsWith("1.12");
-        }
-        return true;
+
+        String className = mixinClassName.contains(".")
+                ? mixinClassName.substring(mixinClassName.lastIndexOf('.') + 1)
+                : mixinClassName;
+
+        className = className.substring(0, className.length() - 1);
+
+        Set<String> versions = className.contains("_v")
+                ? new HashSet<>(Arrays.asList(className.substring(className.indexOf("_v") + 2).split("_")))
+                : Collections.emptySet();
+
+        return versions.isEmpty() || versions.contains(Loader.instance().getMinecraftModContainer().getVersion().split("\\.")[1]);
     }
 
     @Override

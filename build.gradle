@@ -16,6 +16,8 @@ version = project.mod_version
 group = project.maven_group
 archivesBaseName = project.archives_base_name
 
+sourceCompatibility = targetCompatibility = 1.8
+
 minecraft {
     version = "${project.loader_version}-${project.minecraft_version}"
     runDir = 'run'
@@ -58,6 +60,10 @@ processResources {
     filesMatching('mcmod.info') {
         expand propertyMap
     }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }
 
 jar {

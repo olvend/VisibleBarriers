@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(Barrier.class)
-public class BarrierMixin_v1_8 {
+public class BarrierMixin_v8$ {
     @Inject(method = "Lnet/minecraft/client/particle/Barrier;func_180434_a(Lnet/minecraft/client/renderer/WorldRenderer;Lnet/minecraft/entity/Entity;FFFFFF)V", at = @At("HEAD"), cancellable = true, remap = false)
     public void removeParticle(CallbackInfo ci) {
         if (VisibleBarriers.isVisible) {

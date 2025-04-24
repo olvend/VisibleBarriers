@@ -10,8 +10,8 @@ import net.minecraft.world.IBlockAccess;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(BlockBarrier.class)
-public abstract class BlockBarrierMixin_v1_8 extends Block {
-    public BlockBarrierMixin_v1_8() {
+public abstract class BlockBarrierMixin_v8$ extends Block {
+    public BlockBarrierMixin_v8$() {
         super(null);
     }
 
