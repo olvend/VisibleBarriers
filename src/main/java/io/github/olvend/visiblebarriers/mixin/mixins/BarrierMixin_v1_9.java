@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(Barrier.class)
-@SupportedVersions("1.9")
+@SupportedVersions("[1.9]")
 public class BarrierMixin_v1_9 extends EntityFX {
     protected BarrierMixin_v1_9() {
         super(null, 0, 0, 0);
