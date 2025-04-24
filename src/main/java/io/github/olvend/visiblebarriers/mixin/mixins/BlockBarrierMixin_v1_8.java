@@ -1,6 +1,7 @@
 package io.github.olvend.visiblebarriers.mixin.mixins;
 
 import io.github.olvend.visiblebarriers.VisibleBarriers;
+import io.github.olvend.visiblebarriers.mixin.SupportedVersions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBarrier;
 import net.minecraft.util.BlockPos;
@@ -10,8 +11,9 @@ import net.minecraft.world.IBlockAccess;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(BlockBarrier.class)
-public abstract class BlockBarrierMixin_v8$ extends Block {
-    public BlockBarrierMixin_v8$() {
+@SupportedVersions("[1.8,1.9)")
+public abstract class BlockBarrierMixin_v1_8 extends Block {
+    public BlockBarrierMixin_v1_8() {
         super(null);
     }
 
